@@ -105,6 +105,88 @@ button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
 .primary{height:56px;border-radius:14px;background:linear-gradient(90deg,var(--accent),#ff6a3d);color:#fff;font-weight:900;font-size:1.15rem;box-shadow:0 6px 18px rgba(255,61,139,.35);touch-action:manipulation}
 .secondary{height:52px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.06);font-weight:800;font-size:1rem;touch-action:manipulation}
 .primary:active,.secondary:active{transform:translateY(1px)}
+/* Home */
+.page{position:absolute;inset:0;display:flex;flex-direction:column;overflow-y:auto;padding-top:calc(env(safe-area-inset-top,0px) + 12px);padding-bottom:calc(env(safe-area-inset-bottom,0px) + 16px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.home{background:linear-gradient(180deg,rgba(18,10,40,.55),rgba(18,10,40,.82))}
+.home-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.home-stats{display:flex;gap:8px;align-items:center}
+.home-stats .pts{font-weight:900;color:var(--gold);background:rgba(255,205,60,.12);border:1px solid rgba(255,205,60,.3);border-radius:999px;padding:3px 12px;font-size:.95rem}
+.home-stats .wallet{background:rgba(121,214,94,.12);border:1px solid rgba(121,214,94,.3);border-radius:999px;padding:3px 12px;font-size:.95rem}
+.home-mid{margin:auto 0;display:flex;flex-direction:column;gap:14px;padding-block:24px;max-width:560px;width:100%;align-self:center}
+.hello{margin:0;font-weight:800;color:var(--cyan);font-size:1.05rem}
+.home h1{margin:0;font-size:clamp(1.9rem,8.5vw,2.8rem);font-weight:900;line-height:1.25;text-wrap:balance;text-shadow:0 4px 18px rgba(0,0,0,.4)}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.tile{border-radius:24px;padding:18px 14px 16px;display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:start;min-height:190px;justify-content:flex-end;box-shadow:0 10px 26px rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.22);touch-action:manipulation;transition:transform .1s;position:relative;overflow:hidden}
+.tile:active{transform:scale(.97)}
+.tile svg{width:78px;height:50px;color:#fff;margin-bottom:auto;filter:drop-shadow(0 3px 6px rgba(0,0,0,.25))}
+.tile b{font-size:1.65rem;font-weight:900;color:#fff}
+.tile span{font-size:.85rem;font-weight:700;color:rgba(255,255,255,.85);line-height:1.4}
+.tile.cars{background:linear-gradient(150deg,#ff3d8b,#ff7a3d)}
+.tile.math{background:linear-gradient(150deg,#14b8c4,#3e7bff)}
+.back{display:inline-flex;align-items:center;gap:4px;height:40px;padding:0 12px 0 8px;border-radius:12px;background:var(--panel);border:1px solid var(--line);font-weight:800;font-size:.9rem;touch-action:manipulation}
+.back svg{width:18px;height:18px;fill:var(--fg)}
+.page-bar{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.page-bar h2{margin:0;font-size:1.3rem;font-weight:900}
+/* Garage */
+.garage{background:linear-gradient(180deg,rgba(12,10,22,.55),transparent 22%);pointer-events:none}
+.garage .page-bar,.garage-panel{pointer-events:auto}
+.garage-panel{margin-top:auto;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:14px;display:flex;flex-direction:column;gap:10px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);width:100%;max-width:560px;align-self:center}
+.car-title{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.car-title b{font-size:1.35rem;font-weight:900}
+.car-title span{font-weight:800;font-size:.9rem;color:var(--money);direction:ltr}
+.car-title span.own{color:var(--muted);direction:rtl}
+.bars{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bars div{display:flex;flex-direction:column;gap:4px;font-size:.75rem;font-weight:700;color:var(--muted)}
+.bars i{display:block;height:7px;border-radius:4px;background:rgba(255,255,255,.12);overflow:hidden}
+.bars em{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),#ff7a3d);transition:width .3s}
+.cars-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.car-card{flex:none;scroll-snap-align:start;min-width:112px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.05);padding:9px 10px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;font-weight:800;font-size:.9rem;touch-action:manipulation;text-align:start}
+.car-card.sel{border-color:var(--accent);background:rgba(255,61,139,.16)}
+.car-card .price{font-size:.75rem}
+.car-card .using{color:var(--cyan);font-size:.72rem}
+/* Math */
+.math{background:radial-gradient(circle at 80% 0%,#1d3a6e 0,transparent 55%),radial-gradient(circle at 0% 100%,#3a1d5e 0,transparent 50%),#0f1226;gap:14px}
+.digits{height:40px;min-width:56px;border-radius:12px;background:var(--panel);border:1px solid var(--line);font-weight:900;touch-action:manipulation}
+.math-body{width:100%;max-width:560px;align-self:center;display:flex;flex-direction:column;flex:1}
+.math-body section{display:flex;flex-direction:column;gap:14px;flex:1}
+.score-card{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,rgba(255,205,60,.18),rgba(255,205,60,.05));border:1px solid rgba(255,205,60,.35);border-radius:18px;padding:12px 16px}
+.score-card span{font-weight:800;color:var(--muted)}
+.score-card b{font-size:1.9rem;font-weight:900;color:var(--gold)}
+.lead{margin:0;color:var(--muted);font-weight:600;line-height:1.7}
+.ops{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.op{border-radius:20px;padding:14px;display:flex;align-items:center;gap:12px;border:1px solid var(--line);background:rgba(255,255,255,.05);touch-action:manipulation;text-align:start}
+.op:active{transform:scale(.98)}
+.op .sym{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:1.9rem;font-weight:900;color:#fff;flex:none}
+.op b{display:block;font-size:1.2rem;font-weight:900}
+.op small{display:block;color:var(--muted);font-weight:700;font-size:.78rem;margin-top:2px}
+.op.wide{grid-column:1/-1}
+.quiz-top{display:flex;align-items:center;gap:8px;font-weight:800;flex-wrap:wrap}
+.chip-lvl{background:rgba(62,230,255,.14);color:var(--cyan);border-radius:999px;padding:2px 10px;font-size:.8rem}
+.streak{color:#ff9a3d;font-size:.85rem}
+.qpts{margin-inline-start:auto;color:var(--gold);font-weight:900}
+.progress{height:8px;border-radius:4px;background:rgba(255,255,255,.1);overflow:hidden}
+.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),#3e7bff);transition:width .3s}
+.qcard{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:24px;padding:28px 16px 18px;text-align:center;display:flex;flex-direction:column;gap:10px}
+.eq{font-size:clamp(2.6rem,13vw,4rem);font-weight:900;letter-spacing:.02em;white-space:nowrap}
+.eq .q{color:var(--gold)}
+.fb{font-weight:900;font-size:1.15rem;min-height:1.6em}
+.fb.good{color:#5fe08a}
+.fb.bad{color:#ff7a7a}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ans{height:84px;border-radius:20px;font-size:2rem;font-weight:900;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.18);touch-action:manipulation;transition:transform .08s,background .15s}
+.ans:active{transform:scale(.96)}
+.ans.right{background:#1f9d55;border-color:#5fe08a}
+.ans.wrong{background:#b3262e;border-color:#ff7a7a;animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.stars-big{display:flex;justify-content:center;gap:10px;margin-top:16px}
+.stars-big svg{width:64px;height:64px}
+#mDone h3{margin:0;text-align:center;font-size:1.8rem;font-weight:900}
+.done-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.done-stats div{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:14px;padding:10px 6px;text-align:center}
+.done-stats span{display:block;font-size:.78rem;color:var(--muted);font-weight:700}
+.done-stats b{font-size:1.5rem;font-weight:900}
+.money-t{color:var(--money);direction:ltr;display:inline-block}
+@media (prefers-reduced-motion:reduce){.ans.wrong{animation:none}}
 .toast{position:absolute;left:50%;top:calc(env(safe-area-inset-top,0px) + 16px);transform:translateX(-50%);background:var(--panel-solid);border:1px solid var(--accent);border-radius:12px;padding:8px 16px;font-weight:700;max-width:calc(100% - 32px);text-align:center;z-index:5;width:max-content}
 .loading{position:absolute;inset:0;display:grid;place-items:center;background:#0c0a14;z-index:10;text-align:center;padding:0 24px;font-weight:700;color:var(--muted)}
 @media (prefers-reduced-motion:reduce){.stars.flash i.on{animation:none}}
@@ -149,20 +231,93 @@ button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
     </div>
   </div>
 
-  <div class="screen" id="menu" hidden>
+  <div class="page home" id="home" hidden>
+    <div class="home-top">
+      <button class="icon-btn" id="bSound" aria-label="الصوت"></button>
+      <div class="home-stats"><span class="wallet num" id="hmMoney">$0</span><span class="pts num" id="hmPts">0 نقطة</span></div>
+    </div>
+    <div class="home-mid">
+      <p class="hello">هلا والله</p>
+      <h1>وش ودك تلعب اليوم يا عبدالعزيز؟</h1>
+      <div class="tiles">
+        <button class="tile cars" id="bCars">
+          <svg viewBox="0 0 64 40" aria-hidden="true"><path d="M8 26c0-3 2-5 5-6l7-8c1-1 3-2 5-2h14c2 0 4 1 5 2l7 8c3 1 5 3 5 6v5c0 1-1 2-2 2h-4a6 6 0 0 1-12 0H26a6 6 0 0 1-12 0h-4c-1 0-2-1-2-2z" fill="currentColor"/><circle cx="20" cy="33" r="4" fill="#fff"/><circle cx="44" cy="33" r="4" fill="#fff"/><path d="M22 19l5-6h7v6zm15 0v-6h5l5 6z" fill="rgba(255,255,255,.75)"/></svg>
+          <b>سيارات</b><span>المدينة والدرفت والمهمات</span>
+        </button>
+        <button class="tile math" id="bMath">
+          <svg viewBox="0 0 64 40" aria-hidden="true"><g fill="currentColor"><rect x="8" y="9" width="16" height="4" rx="2"/><rect x="14" y="3" width="4" height="16" rx="2"/><rect x="40" y="9" width="16" height="4" rx="2"/><rect x="11" y="28" width="10" height="4" rx="2" transform="rotate(45 16 30)"/><rect x="11" y="28" width="10" height="4" rx="2" transform="rotate(-45 16 30)"/><rect x="40" y="24" width="16" height="4" rx="2"/><circle cx="48" cy="19" r="2.5"/><circle cx="48" cy="33" r="2.5"/></g></svg>
+          <b>رياضيات</b><span>جمع وطرح وضرب وقسمة</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen" id="carsMenu" hidden>
     <div class="sheet">
       <div class="top-row">
-        <div class="wallet num" id="mMoney">$0</div>
-        <button class="icon-btn" id="bSound" aria-label="الصوت"></button>
+        <button class="back" id="bCarsBack" aria-label="رجوع"><svg viewBox="0 0 24 24"><path d="M8.5 4 17 12l-8.5 8-2-2 6.4-6-6.4-6z"/></svg>الرئيسية</button>
+        <div class="wallet num" id="cmMoney">$0</div>
       </div>
       <div class="brand">
         <span class="eyebrow">عزوز سيتي</span>
         <h1>سباق عبدالعزيز</h1>
         <p>مدينة كاملة على البحر. سوّ مهمات، درفت، نط من الطلعات على الشاطئ، وانتبه من الشرطة.</p>
       </div>
-      <div class="sect"><div class="sect-h">السيارة</div><div class="opts" id="styles"></div></div>
-      <div class="sect"><div class="sect-h">اللون · <span class="sw-name" id="swName"></span></div><div class="swatches" id="swatches"></div></div>
       <button class="primary" id="bPlay">انزل المدينة</button>
+      <button class="secondary" id="bOpenGarage">الكراج</button>
+    </div>
+  </div>
+
+  <div class="page garage" id="garage" hidden>
+    <div class="page-bar">
+      <button class="back" id="bGarageBack" aria-label="رجوع"><svg viewBox="0 0 24 24"><path d="M8.5 4 17 12l-8.5 8-2-2 6.4-6-6.4-6z"/></svg>رجوع</button>
+      <h2>الكراج</h2>
+      <div class="wallet num" id="mMoney">$0</div>
+    </div>
+    <div class="garage-panel">
+      <div class="car-title"><b id="gName"></b><span id="gTag"></span></div>
+      <div class="bars"><div><span>السرعة</span><i><em id="gSpeed"></em></i></div><div><span>التسارع</span><i><em id="gAcc"></em></i></div></div>
+      <div class="cars-row" id="styles"></div>
+      <div class="sect-h">اللون · <span class="sw-name" id="swName"></span></div>
+      <div class="swatches" id="swatches"></div>
+      <button class="primary" id="gAction">اختار هذي</button>
+    </div>
+  </div>
+
+  <div class="page math" id="math" hidden>
+    <div class="page-bar">
+      <button class="back" id="bMathBack" aria-label="رجوع"><svg viewBox="0 0 24 24"><path d="M8.5 4 17 12l-8.5 8-2-2 6.4-6-6.4-6z"/></svg>رجوع</button>
+      <h2>تحدي الرياضيات</h2>
+      <button class="digits" id="bDigits" aria-label="شكل الأرقام">١٢٣</button>
+    </div>
+    <div class="math-body">
+      <section id="mPick">
+        <div class="score-card"><span>نقاطك</span><b class="num" id="mTotal">0</b></div>
+        <p class="lead">اختار التحدي. كل جولة فيها عشر أسئلة، وكل جواب صح يعطيك نقاط وفلوس للكراج.</p>
+        <div class="ops" id="mOps"></div>
+      </section>
+      <section id="mQuiz" hidden>
+        <div class="quiz-top">
+          <span id="qCount" class="num"></span>
+          <span class="chip-lvl" id="qLvl"></span>
+          <span class="streak" id="qStreak"></span>
+          <span class="qpts num" id="qPts"></span>
+        </div>
+        <div class="progress"><i id="qBar"></i></div>
+        <div class="qcard"><div class="eq num" id="qEq"></div><div class="fb" id="qFb">&nbsp;</div></div>
+        <div class="answers" id="qAns"></div>
+      </section>
+      <section id="mDone" hidden>
+        <div class="stars-big" id="dStars"></div>
+        <h3 id="dTitle"></h3>
+        <div class="done-stats">
+          <div><span>صح</span><b class="num" id="dRight"></b></div>
+          <div><span>النقاط</span><b class="num" id="dPoints"></b></div>
+          <div><span>للكراج</span><b class="num money-t" id="dCash"></b></div>
+        </div>
+        <button class="primary" id="dAgain">جولة ثانية</button>
+        <button class="secondary" id="dPick">اختار تحدي ثاني</button>
+      </section>
     </div>
   </div>
 
@@ -170,7 +325,7 @@ button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
     <div class="sheet">
       <h2>استراحة</h2>
       <button class="primary" id="bResume">كمّل</button>
-      <button class="secondary" id="bGarage">الكراج</button>
+      <button class="secondary" id="bGarage">القائمة</button>
     </div>
   </div>
 
@@ -953,8 +1108,8 @@ const carGroup = new T.Group(); carGroup.rotation.order = 'YXZ'; scene.add(carGr
 const contact = new T.Mesh(new T.PlaneGeometry(1, 1).rotateX(-Math.PI / 2), new T.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false, opacity: .85 }));
 carGroup.add(contact);
 let playerModel = null, wheels = [], bodyG = null, playerPaint = null;
-function buildPlayer() {
-  CUR = carSpec(save.car);
+function buildPlayer(id = save.car) {
+  CUR = carSpec(id);
   if (playerModel) carGroup.remove(playerModel);
   if (playerPaint) playerPaint.dispose();
   playerPaint = paintMaterial(CUR, CUR.police ? '#f4f4f0' : colorHex());
@@ -1088,7 +1243,7 @@ const STATIONS = [
 const mtof = m => 440 * Math.pow(2, (m - 69) / 12);
 function radioTick() {
   if (!ac) return;
-  if (state === 'pause' || station === 0 || muted || ac.state !== 'running') { radioNext = ac.currentTime + .05; return; }
+  if (state === 'pause' || state === 'math' || state === 'home' || station === 0 || muted || ac.state !== 'running') { radioNext = ac.currentTime + .05; return; }
   const st = STATIONS[station], six = 60 / st.bpm / 4, out = radioGain;
   while (radioNext < ac.currentTime + .15) {
     const t = radioNext, s = radioStep % 16, ch = st.chords[Math.floor(radioStep / 16) % 4];
@@ -1594,7 +1749,7 @@ function audioUpdate(inp) {
   const t0 = ac.currentTime, spd = Math.hypot(car.vx, car.vz), f = 26 + car.rpm / 60 * 1.5;
   eng1.frequency.setTargetAtTime(f, t0, .05); eng2.frequency.setTargetAtTime(f * 1.005, t0, .05);
   engFilter.frequency.setTargetAtTime(260 + car.rpm * .13, t0, .05);
-  const live = state === 'play' || state === 'menu';
+  const live = state === 'play' || state === 'carsMenu' || state === 'garage';
   engGain.gain.setTargetAtTime(live ? (.03 + (inp.gas ? .05 : 0) + (car.burnout ? .03 : 0)) : 0, t0, .08);
   let sq = 0;
   if (state === 'play' && !car.air) {
@@ -1668,19 +1823,25 @@ function timers(dt) {
 /* ---------- Flow ---------- */
 let state = 'loading', played = false;
 const show = (id, on) => { $(id).hidden = !on; };
+const SCREENS = ['#home', '#carsMenu', '#garage', '#math'];
+function showOnly(id) { SCREENS.forEach(s => show(s, s === id)); }
+function leavePlay() { for (const k in input) input[k] = 0; hornStop(); ['#pause', '#hud', '#controls'].forEach(id => show(id, false)); }
+function goHome() {
+  leavePlay(); state = 'home'; showOnly('#home');
+  $('#hmMoney').textContent = '$' + fmt(save.cash); $('#hmPts').textContent = fmt(save.mathPoints || 0) + ' نقطة';
+  renderSoundBtn(); applyViewOffset();
+}
+function goCars() { leavePlay(); state = 'carsMenu'; showOnly('#carsMenu'); $('#cmMoney').textContent = '$' + fmt(save.cash); applyViewOffset(); }
+function goGarage() { state = 'garage'; showOnly('#garage'); garageSel = save.car; buildGarage(); applyViewOffset(); }
+function leaveGarage() { if (CUR.id !== save.car) buildPlayer(); goCars(); }
 function play() {
   audioInit();
   for (const k in input) input[k] = 0;
   state = 'play'; camSnap = true; camera.clearViewOffset();
-  show('#menu', false); show('#pause', false); show('#hud', true); show('#controls', true);
+  showOnly(null); show('#pause', false); show('#hud', true); show('#controls', true);
   renderStars(); lastHud = ''; hud(); showStation();
   if (!played) sub('روح لأي علامة <b>صفرا</b> على الخريطة عشان تبدأ مهمة', 6);
   played = true;
-}
-function goMenu() {
-  state = 'menu'; for (const k in input) input[k] = 0; hornStop();
-  ['#pause', '#hud', '#controls'].forEach(id => show(id, false));
-  show('#menu', true); buildGarage(); applyViewOffset();
 }
 function setPause(on) {
   if (on && state === 'play') { state = 'pause'; for (const k in input) input[k] = 0; hornStop(); show('#pause', true); }
@@ -1690,15 +1851,22 @@ function setPause(on) {
 /* ---------- Garage UI ---------- */
 let toastTimer = 0;
 function toast(msg) { const el = $('#toast'); el.textContent = msg; el.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { el.hidden = true; }, 2600); }
+let garageSel = save.car;
 function buildGarage() {
+  const g = carSpec(garageSel), owned = save.cars.includes(g.id);
   $('#mMoney').textContent = '$' + fmt(save.cash);
+  $('#gName').textContent = g.name;
+  const tag = $('#gTag'); tag.className = owned ? 'own' : ''; tag.textContent = owned ? (save.car === g.id ? 'تسوقها الحين' : 'عندك') : '$' + fmt(g.price);
+  $('#gSpeed').style.width = Math.round(g.perf.vmax / 64 * 100) + '%';
+  $('#gAcc').style.width = Math.round(g.perf.acc / 15 * 100) + '%';
   $('#styles').innerHTML = CARS.map(s => {
-    const owned = save.cars.includes(s.id);
-    return `<button class="opt ${save.car === s.id ? 'sel' : ''}" data-car="${s.id}" id="car-${s.id}"><span>${s.name}</span><span class="price ${owned ? 'owned' : ''}">${owned ? 'عندك' : '$' + fmt(s.price)}</span></button>`;
+    const own = save.cars.includes(s.id);
+    return `<button class="car-card ${garageSel === s.id ? 'sel' : ''}" data-car="${s.id}" id="car-${s.id}"><span>${s.name}</span>${save.car === s.id ? '<span class="using">تسوقها الحين</span>' : `<span class="price ${own ? 'owned' : ''}">${own ? 'عندك' : '$' + fmt(s.price)}</span>`}</button>`;
   }).join('');
   $('#swatches').innerHTML = COLORS.map(c => `<button class="sw ${save.color === c.id ? 'sel' : ''} ${save.colors.includes(c.id) ? '' : 'locked'}" data-color="${c.id}" id="cl-${c.id}" style="background:${c.hex}" aria-label="${c.name}"></button>`).join('');
-  $('#swName').textContent = (COLORS.find(c => c.id === save.color) || COLORS[0]).name;
-  renderSoundBtn();
+  $('#swName').textContent = g.police ? 'ألوان الشرطة ثابتة' : (COLORS.find(c => c.id === save.color) || COLORS[0]).name;
+  const act = $('#gAction');
+  act.innerHTML = !owned ? `اشتريها بـ <bdi dir="ltr">$${fmt(g.price)}</bdi>` : save.car === g.id ? 'انزل المدينة فيها' : 'اختار هذي';
 }
 function tryBuy(list, item, label, apply) {
   if (list.includes(item.id)) { apply(); sfx.click(); return; }
@@ -1706,15 +1874,21 @@ function tryBuy(list, item, label, apply) {
   else { tone(300, .3, 'sawtooth', .06, 120); toast(`${label} سعره $${fmt(item.price)}. ناقصك $${fmt(item.price - save.cash)}، سوّ مهمات وتجمعها!`); }
 }
 $('#styles').addEventListener('click', e => {
-  const b = e.target.closest('[data-car]'); if (!b) return; audioInit();
-  const s = carSpec(b.dataset.car);
-  tryBuy(save.cars, s, s.name, () => { save.car = s.id; persist(); buildPlayer(); });
+  const b = e.target.closest('[data-car]'); if (!b) return; audioInit(); sfx.click();
+  garageSel = b.dataset.car; buildPlayer(garageSel); buildGarage();
+});
+$('#gAction').addEventListener('click', () => {
+  audioInit();
+  const g = carSpec(garageSel);
+  if (save.cars.includes(g.id) && save.car === g.id) return play();
+  tryBuy(save.cars, g, g.name, () => { save.car = g.id; persist(); });
   buildGarage();
 });
 $('#swatches').addEventListener('click', e => {
   const b = e.target.closest('[data-color]'); if (!b) return; audioInit();
   const c = COLORS.find(x => x.id === b.dataset.color);
   tryBuy(save.colors, c, `اللون ${c.name}`, () => { save.color = c.id; persist(); setPaint(c.hex); });
+  if (CUR.police) toast('سيارة الشرطة لونها ثابت، اللون يطلع على باقي السيارات');
   buildGarage();
 });
 const ICON_ON = '<svg viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16 8.5a5 5 0 0 1 0 7l-1.4-1.4a3 3 0 0 0 0-4.2zM18.5 6a8.5 8.5 0 0 1 0 12l-1.4-1.4a6.5 6.5 0 0 0 0-9.2z"/></svg>';
@@ -1725,6 +1899,108 @@ $('#bSound').addEventListener('click', () => {
   audioInit(); if (master) master.gain.value = muted ? 0 : .6; renderSoundBtn();
 });
 $('#bRadio').addEventListener('click', () => { audioInit(); station = (station + 1) % STATIONS.length; radioStep = 0; showStation(); });
+
+/* ---------- Math challenge ---------- */
+const OPS = [
+  { id: 'add', name: 'جمع', sym: '+', hint: 'اجمع الرقمين', color: 'linear-gradient(150deg,#ff3d8b,#ff7a3d)' },
+  { id: 'sub', name: 'طرح', sym: '−', hint: 'اطرح الصغير من الكبير', color: 'linear-gradient(150deg,#7a5cff,#3e7bff)' },
+  { id: 'mul', name: 'ضرب', sym: '×', hint: 'جدول الضرب', color: 'linear-gradient(150deg,#14b8c4,#1f9d55)' },
+  { id: 'div', name: 'قسمة', sym: '÷', hint: 'قسمة بدون باقي', color: 'linear-gradient(150deg,#ffb020,#ff7a3d)' },
+  { id: 'mix', name: 'خليط', sym: '؟', hint: 'كل الأنواع مع بعض', color: 'linear-gradient(150deg,#ff4fd8,#3ee6ff)', wide: true },
+];
+const SYM = { add: '+', sub: '−', mul: '×', div: '÷' };
+const AR = '٠١٢٣٤٥٦٧٨٩';
+let arDigits = save.arDigits !== false;
+const N = n => arDigits ? String(n).replace(/\d/g, d => AR[d]) : String(n);
+const RI = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.random() * (i + 1) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
+function makeQuestion(kind, lvl) {
+  const op = kind === 'mix' ? pick(['add', 'sub', 'mul', 'div']) : kind;
+  let a, b, ans;
+  if (op === 'add') { [a, b] = lvl === 1 ? [RI(2, 20), RI(2, 20)] : lvl === 2 ? [RI(11, 99), RI(11, 99)] : [RI(100, 899), RI(11, 99)]; ans = a + b; }
+  else if (op === 'sub') { if (lvl === 1) { a = RI(6, 20); b = RI(1, a - 1); } else if (lvl === 2) { a = RI(30, 99); b = RI(10, a - 5); } else { a = RI(120, 999); b = RI(11, 99); } ans = a - b; }
+  else if (op === 'mul') { if (lvl === 1) { a = RI(2, 5); b = RI(1, 10); } else if (lvl === 2) { a = RI(3, 10); b = RI(2, 10); } else { a = RI(11, 15); b = RI(2, 9); } ans = a * b; }
+  else { const d = lvl === 1 ? RI(2, 5) : RI(2, 10), q = lvl === 3 ? RI(4, 12) : RI(2, 10); a = d * q; b = d; ans = q; }
+  const set = new Set([ans]);
+  const near = shuffle([ans + 1, ans - 1, ans + 2, ans - 2, ans + 10, ans - 10, op === 'mul' ? a * (b + 1) : ans + 3, op === 'mul' ? a * (b - 1) : ans - 3, op === 'mul' ? a + b : ans + 5]);
+  for (const c of near) { if (set.size >= 4) break; if (c >= 0 && c !== ans) set.add(c); }
+  while (set.size < 4) set.add(ans + RI(3, 20));
+  return { op, a, b, ans, choices: shuffle([...set]) };
+}
+const PRAISE = ['أحسنت!', 'صح عليك!', 'بطل!', 'ممتاز!', 'كفو!', 'ذيب!'];
+const quiz = { kind: 'add', i: 0, total: 10, right: 0, streak: 0, wrongRun: 0, lvl: 1, pts: 0, q: null, locked: false };
+function goMath() { state = 'math'; leavePlay(); showOnly('#math'); applyViewOffset(); mathPick(); }
+function mathView(id) { ['#mPick', '#mQuiz', '#mDone'].forEach(s => show(s, s === id)); }
+function renderDigitsBtn() { $('#bDigits').textContent = arDigits ? '١٢٣' : '123'; }
+function mathPick() {
+  mathView('#mPick'); renderDigitsBtn();
+  $('#mTotal').textContent = N(fmt(save.mathPoints || 0));
+  const best = save.mathBest || {};
+  $('#mOps').innerHTML = OPS.map(o => `<button class="op ${o.wide ? 'wide' : ''}" data-op="${o.id}" id="op-${o.id}"><span class="sym" style="background:${o.color}">${o.sym}</span><span><b>${o.name}</b><small>${best[o.id] ? 'أفضل نتيجة: ' + N(best[o.id]) + ' من ' + N(10) : o.hint}</small></span></button>`).join('');
+}
+function startQuiz(kind) {
+  Object.assign(quiz, { kind, i: 0, right: 0, streak: 0, wrongRun: 0, lvl: 1, pts: 0, locked: false });
+  mathView('#mQuiz'); nextQuestion();
+}
+function nextQuestion() {
+  if (quiz.i >= quiz.total) return finishQuiz();
+  quiz.q = makeQuestion(quiz.kind, quiz.lvl); quiz.locked = false;
+  const q = quiz.q;
+  $('#qCount').textContent = `سؤال ${N(quiz.i + 1)} من ${N(quiz.total)}`;
+  $('#qLvl').textContent = `مستوى ${N(quiz.lvl)}`;
+  $('#qStreak').textContent = quiz.streak >= 2 ? `${N(quiz.streak)} ورا بعض` : '';
+  $('#qPts').textContent = `${N(quiz.pts)} نقطة`;
+  $('#qBar').style.width = (quiz.i / quiz.total * 100) + '%';
+  const eq = $('#qEq'); eq.dir = arDigits ? 'rtl' : 'ltr';
+  eq.innerHTML = `${N(q.a)} ${SYM[q.op]} ${N(q.b)} = <span class="q">؟</span>`;
+  const fb = $('#qFb'); fb.className = 'fb'; fb.innerHTML = '&nbsp;';
+  $('#qAns').innerHTML = q.choices.map((c, k) => `<button class="ans num" data-v="${c}" id="ans-${k}">${N(c)}</button>`).join('');
+}
+function answer(btn) {
+  if (quiz.locked) return; quiz.locked = true;
+  const q = quiz.q, v = +btn.dataset.v, fb = $('#qFb');
+  if (v === q.ans) {
+    btn.classList.add('right'); quiz.right++; quiz.streak++; quiz.wrongRun = 0;
+    const gain = 10 * quiz.lvl + (quiz.streak >= 3 ? 5 : 0);
+    quiz.pts += gain;
+    fb.className = 'fb good'; fb.textContent = `${pick(PRAISE)} +${N(gain)}`;
+    [784, 988, 1319].forEach((f, i) => tone(f, .12, 'triangle', .1, 0, i * .06));
+    if (quiz.streak % 3 === 0 && quiz.lvl < 3) quiz.lvl++;
+  } else {
+    btn.classList.add('wrong'); quiz.streak = 0; quiz.wrongRun++;
+    $('#qAns').querySelector(`[data-v="${q.ans}"]`).classList.add('right');
+    fb.className = 'fb bad'; fb.textContent = `الجواب الصحيح ${N(q.ans)}`;
+    tone(220, .3, 'sawtooth', .06, 140);
+    if (quiz.wrongRun >= 2 && quiz.lvl > 1) { quiz.lvl--; quiz.wrongRun = 0; }
+  }
+  quiz.i++;
+  $('#qPts').textContent = `${N(quiz.pts)} نقطة`;
+  $('#qBar').style.width = (quiz.i / quiz.total * 100) + '%';
+  setTimeout(nextQuestion, v === q.ans ? 900 : 1700);
+}
+const STAR = on => `<svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z" fill="${on ? '#ffcd3c' : 'rgba(255,255,255,.15)'}" stroke="${on ? '#b8862a' : 'none'}" stroke-width="1"/></svg>`;
+function finishQuiz() {
+  const r = quiz.right, stars = r >= 9 ? 3 : r >= 7 ? 2 : r >= 4 ? 1 : 0, cash = r * 20;
+  save.mathPoints = (save.mathPoints || 0) + quiz.pts; save.cash += cash;
+  save.mathBest = save.mathBest || {}; save.mathBest[quiz.kind] = Math.max(save.mathBest[quiz.kind] || 0, r);
+  persist();
+  mathView('#mDone');
+  $('#dStars').innerHTML = [0, 1, 2].map(k => STAR(k < stars)).join('');
+  $('#dTitle').textContent = r === 10 ? 'عبقري! كلها صح' : r >= 7 ? 'شغل نظيف يا عبدالعزيز!' : r >= 4 ? 'زين! جرب مرة ثانية وتصير أحسن' : 'ولا يهمك، المرة الجاية أحسن';
+  $('#dRight').textContent = `${N(r)}/${N(10)}`;
+  $('#dPoints').textContent = N(quiz.pts);
+  $('#dCash').textContent = '+$' + cash;
+  if (stars >= 2) sfx.passed(); else sfx.bank();
+}
+$('#mOps').addEventListener('click', e => { const b = e.target.closest('[data-op]'); if (!b) return; audioInit(); sfx.click(); startQuiz(b.dataset.op); });
+$('#qAns').addEventListener('click', e => { const b = e.target.closest('.ans'); if (b) { audioInit(); answer(b); } });
+$('#dAgain').addEventListener('click', () => startQuiz(quiz.kind));
+$('#dPick').addEventListener('click', mathPick);
+$('#bDigits').addEventListener('click', () => {
+  arDigits = !arDigits; save.arDigits = arDigits; persist(); renderDigitsBtn();
+  if (!$('#mPick').hidden) mathPick();
+  else if (!$('#mQuiz').hidden && quiz.q) { const q = quiz.q, eq = $('#qEq'); eq.dir = arDigits ? 'rtl' : 'ltr'; eq.innerHTML = `${N(q.a)} ${SYM[q.op]} ${N(q.b)} = <span class="q">؟</span>`; document.querySelectorAll('#qAns .ans').forEach(b => { b.textContent = N(+b.dataset.v); }); }
+});
 
 /* ---------- Input ---------- */
 document.querySelectorAll('[data-k]').forEach(el => {
@@ -1741,21 +2017,28 @@ window.addEventListener('keydown', e => {
   if (k) { e.preventDefault(); audioInit(); input[k] = 1; if (k === 'horn') hornStart(); }
   else if (e.key === 'p' || e.key === 'Escape') setPause(state === 'play');
   else if (e.key === 'r') $('#bRadio').click();
-  else if (e.key === 'Enter' && state === 'menu') play();
+  else if (e.key === 'Enter' && state === 'carsMenu') play();
 });
 window.addEventListener('keyup', e => { const k = keyOf(e); if (k) { input[k] = 0; if (k === 'horn') hornStop(); } });
 $('#bPlay').addEventListener('click', play);
 $('#bPause').addEventListener('click', () => setPause(true));
 $('#bResume').addEventListener('click', () => setPause(false));
-$('#bGarage').addEventListener('click', goMenu);
+$('#bGarage').addEventListener('click', goCars);
+$('#bCars').addEventListener('click', () => { audioInit(); sfx.click(); goCars(); });
+$('#bMath').addEventListener('click', () => { audioInit(); sfx.click(); goMath(); });
+$('#bCarsBack').addEventListener('click', goHome);
+$('#bOpenGarage').addEventListener('click', () => { sfx.click(); goGarage(); });
+$('#bGarageBack').addEventListener('click', leaveGarage);
+$('#bMathBack').addEventListener('click', () => { if (!$('#mQuiz').hidden || !$('#mDone').hidden) mathPick(); else goHome(); });
 document.addEventListener('visibilitychange', () => { if (document.hidden) setPause(true); });
 
 /* ---------- Resize ---------- */
 let W = 1, H = 1;
 function applyViewOffset() {
-  if (state === 'play' || state === 'pause') { camera.clearViewOffset(); return; }
+  if (state === 'play' || state === 'pause' || state === 'home' || state === 'math') { camera.clearViewOffset(); return; }
+  const k = state === 'garage' ? .26 : .2;
   if (W > H && H < 520) camera.setViewOffset(W, H, -W * .2, 0, W, H);
-  else camera.setViewOffset(W, H, 0, H * .24, W, H);
+  else camera.setViewOffset(W, H, 0, H * k, W, H);
 }
 function resize() {
   W = canvas.clientWidth || window.innerWidth; H = canvas.clientHeight || window.innerHeight;
@@ -1780,12 +2063,12 @@ function frame(now) {
   }
   audioUpdate(state === 'play' ? input : NONE);
   updateCamera(dt);
-  renderer.render(scene, camera);
+  if (state !== 'math') renderer.render(scene, camera);
   requestAnimationFrame(frame);
 }
-resize(); buildGarage(); renderStars();
-state = 'menu'; show('#menu', true); applyViewOffset(); camSnap = true;
+resize(); renderStars();
+goHome(); camSnap = true;
 requestAnimationFrame(t => { last = t; frame(t); $('#loading').hidden = true; });
-if (location.hash === '#dbg') window.__dbg = { T, camera, carGroup, renderer, scene, car, setCar: id => { save.car = id; buildPlayer(); }, view: (a, d, y) => { state = 'studio'; ['#menu', '#hud', '#controls'].forEach(i => show(i, false)); camera.clearViewOffset(); camera.fov = 40; camera.position.set(car.x + Math.sin(a) * d, y, car.z + Math.cos(a) * d); camera.lookAt(car.x, .7, car.z); camera.updateProjectionMatrix(); renderer.render(scene, camera); } };
+if (location.hash === '#dbg') window.__dbg = { T, camera, carGroup, renderer, scene, car, setCar: id => { save.car = id; buildPlayer(); }, view: (a, d, y) => { state = 'studio'; [...SCREENS, '#hud', '#controls'].forEach(i => show(i, false)); camera.clearViewOffset(); camera.fov = 40; camera.position.set(car.x + Math.sin(a) * d, y, car.z + Math.cos(a) * d); camera.lookAt(car.x, .7, car.z); camera.updateProjectionMatrix(); renderer.render(scene, camera); } };
 })();
 </script>
